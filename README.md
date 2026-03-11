@@ -21,6 +21,7 @@
 - [Python Quick Reference by Data School](https://nbviewer.org/github/justmarkham/python-reference/blob/master/reference.ipynb)
 - [Comprehensive Python Reference](https://github.com/mattharrison/Tiny-Python-3.6-Notebook/blob/master/python.rst)
 - [How to Write Beautiful Python Code With PEP 8](https://realpython.com/python-pep8/)
+- [PCEP Exam Syllabus](https://pythoninstitute.org/pcep-exam-syllabus)
 
 ## Linux and Bash References
 
