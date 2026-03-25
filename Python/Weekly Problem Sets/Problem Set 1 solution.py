@@ -6,10 +6,12 @@
 # Uncomment the problem you're working on and run the script
 # using `python path/to/script.py`
 
+# You can comment/uncomment blocks of code by highlighting
+# the lines and using 'Ctrl + /'
+
 ########################
 ## Solution Problem 1a
 ########################
-# You can uncomment blocks of code using 'Ctrl + /'
 
 # user_name = input("What is your name? ")
 # favorite_number = input("What is your favorite number? ")
