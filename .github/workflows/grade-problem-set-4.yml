@@ -9,6 +9,9 @@ on:
 permissions:
     contents: read
 
+env:
+    FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
     # ---------------------------------------------------------------------------
     # One job per problem — run in parallel, each function gets its own step.
