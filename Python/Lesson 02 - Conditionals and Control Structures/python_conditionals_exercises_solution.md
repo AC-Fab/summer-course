@@ -10,10 +10,10 @@ These exercises focus on using `if`, `elif`, and `else` statements to control pr
 
 ### Exercise 1: Check if a Number is Positive
 
-**Goal**: Write a program that checks if a number is positive using an `if` statement.
+**Goal**: Write a Python Script that asks a user for an integer number, and then checks if the number is positive using an `if` statement.
 
 ```python
-number = 15
+number = int(input("What number would you like to check?  "))
 
 if number > 0:
     print("The number is positive")
@@ -25,10 +25,10 @@ if number > 0:
 
 ### Exercise 2: Even or Odd
 
-**Goal**: Check if a number is even or odd using `if` and `else`.
+**Goal**: Write a Python script that asks a user for an integer number.  Check if the number is even or odd using `if` and `else`.
 
 ```python
-number = 7
+number = int(input("Enter an integer:  "))
 
 if number % 2 == 0:
     print("Even")
@@ -42,10 +42,10 @@ else:
 
 ### Exercise 3: Age Category
 
-**Goal**: Use `if`, `elif`, and `else` to categorize a person by age.
+**Goal**: Write a python script that asks a user for their age, and then uses `if`, `elif`, and `else` to print the correct category for the person by based on their age.
 
 ```python
-age = 25
+age = int(input("How old are you?  "))
 
 if age < 13:
     print("Child")
@@ -63,18 +63,18 @@ else:
 
 ### Exercise 4: Compare Two Numbers
 
-**Goal**: Compare two numbers and print which is larger, or if they're equal.
+**Goal**: Write a Python Script that asks a user for two numbers.  Compare the two numbers and print which is larger, or if they're equal.
 
 ```python
-a = 10
-b = 20
+first_number = float(input("What is the first number?  "))
+second_number = float(input("What is the second number?  "))
 
-if a > b:
-    print("a is larger")
+if first_number > second_number:
+    print(first_number, "is larger")
 elif b > a:
-    print("b is larger")
+    print(second_number, "is larger")
 else:
-    print("a and b are equal")
+    print("The numbers are equal")
 ```
 
 ✅ *Check*: Should print "a is larger", "b is larger", or "a and b are equal".
@@ -83,10 +83,11 @@ else:
 
 ### Exercise 5: Grade Converter
 
-**Goal**: Convert a numeric grade to a letter grade.
+**Goal**: Write a Python Script that asks a user for a numeric grade, and then converts a numeric grade to a letter grade and prints the letter grade.
+
 
 ```python
-score = 85
+score = int(input("Enter a grade:  "))
 
 if score >= 90:
     print("A")
@@ -106,10 +107,10 @@ else:
 
 ### Exercise 6: String Length Check
 
-**Goal**: Check if a string has more than 10 characters.
+**Goal**: Write a Python Script that asks the user for an input string.  Then check if a string has more than 10 characters.  Print "Long string" if it is longer than 10 characters, print "Short string" if it is shorter.
 
 ```python
-text = "Hello, Python!"
+text = input("Enter your input string:  ")
 
 if len(text) > 10:
     print("Long string")
@@ -123,10 +124,10 @@ else:
 
 ### Exercise 7: Logical AND Operator
 
-**Goal**: Check if a number is between 10 and 20 (inclusive) using the `and` operator.
+**Goal**: Write a Python script that asks the user for a number.  Check if a number is between 10 and 20 (inclusive) using the `and` operator.  Print "Number is in range" if it is in between 10 and 20.  Otherwise it should print "Out of range."
 
 ```python
-number = 15
+number = float(input("Enter a number:  "))
 
 if number >= 10 and number <= 20:
     print("Number is in range")
@@ -140,10 +141,10 @@ else:
 
 ### Exercise 8: Logical OR Operator
 
-**Goal**: Check if a character is a vowel using the `or` operator.
+**Goal**: Write a python script that checks if a character is a vowel using the `or` operator.  Print "vowel" or "consonant" depending on the input.
 
 ```python
-letter = "e"
+letter = input("Enter a letter:  ")
 
 if letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u":
     print("Vowel")
@@ -163,10 +164,10 @@ else:
 
 ### Stretch:  Exercise 9: Leap Year Checker
 
-**Goal**: Determine if a year is a leap year.
+**Goal**: Write a Python Script that asks the user for the year.  Determine if a year is a leap year.  Print the result.
 
 ```python
-year = 2024
+year = int(input("Enter a year:  "))
 
 if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
     print("Leap year")
@@ -180,22 +181,32 @@ else:
 
 ### Stretch:  Exercise 10: Nested Conditionals - BMI Calculator
 
-**Goal**: Calculate BMI category using nested `if` statements.
+**Goal**: Write a Python Script that asks the user for their weight in kilograms and their height in meters.  Calculate BMI category using correct `if-elif-else` structure.
 
 ```python
-weight = 70  # kg
-height = 1.75  # meters
+weight = float(input("What is your weight (kg)?  "))
+height = float(input("What is your height (m)?  "))
 
 bmi = weight / (height ** 2)
 
 if bmi < 18.5:
-    print(f"BMI: {bmi:.1f} - Underweight")
+    print("BMI:",bmi," - Underweight")
 elif bmi < 25:
-    print(f"BMI: {bmi:.1f} - Normal weight")
+    print("BMI:",bmi," - Normal weight")
 elif bmi < 30:
-    print(f"BMI: {bmi:.1f} - Overweight")
+    print("BMI:",bmi, " - Overweight")
 else:
-    print(f"BMI: {bmi:.1f} - Obese")
+    print("BMI:",bmi," - Obese")
+
+# Alternative using fprints
+if bmi < 18.5:
+    print(f"BMI: {bmi} - Underweight")
+elif bmi < 25:
+    print(f"BMI: {bmi} - Normal weight")
+elif bmi < 30:
+    print(f"BMI: {bmi} - Overweight")
+else:
+    print(f"BMI: {bmi} - Obese")
 ```
 
 ✅ *Check*: Should calculate BMI and print the correct category.
