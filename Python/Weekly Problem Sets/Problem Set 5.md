@@ -111,7 +111,7 @@ For this problem, you'll create functions that make HTTP requests using differen
 - **`create_user(name: str, job: str) -> dict`**
   - Make a POST request to `https://reqres.in/api/users`
   - Send JSON data in the body: `{"name": name, "job": job}`
-  - Hint: Use `requests.post(url, json={"name": name, "job": job})`
+  - See: [ReqRes API Examples](https://reqres.in/docs)
   - The API returns JSON with the created user including `"id"`, `"name"`, `"job"`, and `"createdAt"` fields
   - Return the entire response dictionary
   - If the request fails (status code is not 201), return an empty dictionary `{}`
@@ -120,7 +120,7 @@ For this problem, you'll create functions that make HTTP requests using differen
 - **`update_user(user_id: int, name: str, job: str) -> dict`**
   - Make a PUT request to `https://reqres.in/api/users/{user_id}`
   - Send JSON data in the body: `{"name": name, "job": job}`
-  - Hint: Use `requests.put(url, json={"name": name, "job": job})`
+  - See: [ReqRes API Examples](https://reqres.in/docs)
   - The API returns JSON with the updated user including `"name"`, `"job"`, and `"updatedAt"` fields
   - Return the entire response dictionary
   - If the request fails (status code is not 200), return an empty dictionary `{}`
@@ -128,7 +128,7 @@ For this problem, you'll create functions that make HTTP requests using differen
 
 - **`delete_user(user_id: int) -> bool`**
   - Make a DELETE request to `https://reqres.in/api/users/{user_id}`
-  - Hint: Use `requests.delete(url)`
+  - See: [ReqRes API Examples](https://reqres.in/docs)
   - The API returns status code 204 (No Content) for successful deletion
   - Return `True` if status code is 204, otherwise return `False`
 
@@ -155,6 +155,7 @@ print(f"Deleted: {success}")
 
 - **`get_users_page(page: int) -> list[dict]`**
   - Make a GET request to `https://reqres.in/api/users?page={page}`
+  - See: [ReqRes API Examples](https://reqres.in/docs)
   - The API returns JSON with format: `{"page": 1, "data": [...]}`
   - Return the list of users from the `"data"` key
   - If the request fails or page is invalid, return an empty list `[]`
@@ -163,7 +164,7 @@ print(f"Deleted: {success}")
 - **`partial_update_user(user_id: int, updates: dict) -> dict`**
   - Make a PATCH request to `https://reqres.in/api/users/{user_id}`
   - Send the `updates` dictionary as JSON data in the body
-  - Hint: Use `requests.patch(url, json=updates)`
+  - See: [ReqRes API Examples](https://reqres.in/docs)
   - PATCH is used for partial updates (unlike PUT which replaces the entire resource)
   - Return the entire response dictionary
   - If the request fails (status code is not 200), return an empty dictionary `{}`
@@ -172,13 +173,169 @@ print(f"Deleted: {success}")
 
 ---
 
-## Problem 4 — Using a REST API
+## Problem 4 — Authenticated REST APIs
 
+For this problem, you'll work with real-world APIs that require authentication. You'll learn two common authentication patterns: API keys and Bearer tokens.
+
+### Setup Instructions
+
+**TMDB API Key (for problem 1):**
+1. Go to https://www.themoviedb.org/ and create a free account
+2. Go to Settings → API → Request an API Key
+3. Choose "Developer" option and fill out the form (use "Educational" as the purpose)
+4. You'll receive an API key (v3 auth) - save this
+
+**GitHub Personal Access Token (for problems 2-4):**
+1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. Generate new token (classic)
+3. Give it a name like "Python Course API Practice"
+4. Select scopes: `gist` (for creating/deleting gists) and `repo` (for viewing repos)
+5. Generate token and **save it immediately** (you can't see it again!)
+
+**Important:** Never commit API keys or tokens to git! Store them in environment variables or a config file that's in `.gitignore`.
+
+---
+
+**Your task:**
+
+- **`search_movie(api_key: str, query: str) -> dict`**
+  - Make a GET request to `https://api.themoviedb.org/3/search/movie`
+  - Include query parameters: `api_key` and `query`
+  - See: [TMDB API - Search Movies](https://developers.themoviedb.org/3/search/search-movies)
+  - The API returns JSON with format: `{"results": [...]}`
+  - Return the first movie from the `"results"` list (if any)
+  - If the request fails or no results found, return an empty dictionary `{}`
+  - Example: `search_movie(YOUR_KEY, "Inception")` returns info about the movie Inception
+
+- **`get_github_user(token: str, username: str) -> dict`**
+  - Make a GET request to `https://api.github.com/users/{username}`
+  - Include authorization header: `{"Authorization": f"Bearer {token}"}`
+  - See: [GitHub API - Get a user](https://docs.github.com/en/rest/users/users#get-a-user)
+  - Return the entire response JSON
+  - The response includes: `"login"`, `"name"`, `"public_repos"`, `"followers"`, etc.
+  - If the request fails, return an empty dictionary `{}`
+  - Example: `get_github_user(YOUR_TOKEN, "torvalds")` returns Linus Torvalds' profile
+
+- **`create_gist(token: str, description: str, filename: str, content: str) -> str`**
+  - Make a POST request to `https://api.github.com/gists`
+  - Include authorization header: `{"Authorization": f"Bearer {token}"}`
+  - Send JSON body with this structure:
+    ```python
+    {
+        "description": description,
+        "public": True,
+        "files": {
+            filename: {
+                "content": content
+            }
+        }
+    }
+    ```
+  - See: [GitHub API - Create a gist](https://docs.github.com/en/rest/gists/gists#create-a-gist)
+  - The API returns the created gist data including an `"id"` field
+  - Return the gist ID (as a string)
+  - If the request fails (status code is not 201), return an empty string `""`
+  - Example: `create_gist(YOUR_TOKEN, "Test gist", "hello.py", "print('Hello')")` creates a gist and returns its ID
+
+- **`delete_gist(token: str, gist_id: str) -> bool`**
+  - Make a DELETE request to `https://api.github.com/gists/{gist_id}`
+  - Include authorization header: `{"Authorization": f"Bearer {token}"}`
+  - See: [GitHub API - Delete a gist](https://docs.github.com/en/rest/gists/gists#delete-a-gist)
+  - The API returns status code 204 for successful deletion
+  - Return `True` if status code is 204, otherwise return `False`
+  - Example: `delete_gist(YOUR_TOKEN, "abc123...")` deletes the gist
+
+**Example usage:**
+```python
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+
+# Search for a movie
+movie = search_movie(TMDB_API_KEY, "The Matrix")
+print(f"Title: {movie['title']}, Year: {movie['release_date'][:4]}")
+
+# Get GitHub user info
+user = get_github_user(GITHUB_TOKEN, "octocat")
+print(f"{user['name']} has {user['public_repos']} public repos")
+
+# Create and delete a gist
+gist_id = create_gist(GITHUB_TOKEN, "My test gist", "test.txt", "Hello World!")
+print(f"Created gist: https://gist.github.com/{gist_id}")
+success = delete_gist(GITHUB_TOKEN, gist_id)
+print(f"Deleted: {success}")
+```
 
 ### Challenge
+
+- **`get_spotify_track_info(access_token: str, track_id: str) -> dict`**
+  - **Note:** This is more complex as Spotify uses OAuth2 authentication
+  - You need to get an access token first using the Client Credentials flow
+  - Make a GET request to `https://api.spotify.com/v1/tracks/{track_id}`
+  - Include authorization header: `{"Authorization": f"Bearer {access_token}"}`
+  - See: [Spotify API - Get Track](https://developer.spotify.com/documentation/web-api/reference/get-track)
+  - Return a dictionary with these keys extracted from the response:
+    - `"name"`: Track name
+    - `"artist"`: First artist name (from `artists[0]["name"]`)
+    - `"album"`: Album name (from `album["name"]`)
+    - `"duration_ms"`: Duration in milliseconds
+  - If the request fails, return an empty dictionary `{}`
+  
+  **Helper function to get access token:**
+  ```python
+  def get_spotify_token(client_id: str, client_secret: str) -> str:
+      """Get Spotify access token using Client Credentials flow"""
+      import base64
+      
+      # Encode credentials
+      credentials = f"{client_id}:{client_secret}"
+      encoded = base64.b64encode(credentials.encode()).decode()
+      
+      # Request token
+      url = "https://accounts.spotify.com/api/token"
+      headers = {"Authorization": f"Basic {encoded}"}
+      data = {"grant_type": "client_credentials"}
+      
+      response = requests.post(url, headers=headers, data=data)
+      if response.status_code == 200:
+          return response.json()["access_token"]
+      return ""
+  ```
+  
+  **Getting Spotify credentials:**
+  1. Go to https://developer.spotify.com/dashboard
+  2. Log in and create an app
+  3. Copy your Client ID and Client Secret
+  
+  **Example:** `get_spotify_track_info(token, "3n3Ppam7vgaVa1iaRUc9Lp")` returns info about a track
 
 
 ---
 
 ## References
+
+### Recursion
+- [Real Python - Thinking Recursively in Python](https://realpython.com/python-thinking-recursively/)
+- [GeeksforGeeks - Recursion in Python](https://www.geeksforgeeks.org/recursion-in-python/)
+
+### HTTP and APIs
+- [Requests Library Documentation](https://requests.readthedocs.io/en/latest/)
+- [Real Python - Python's Requests Library Guide](https://realpython.com/python-requests/)
+- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- [HTTP Methods (GET, POST, PUT, PATCH, DELETE)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [Working with JSON in Python](https://realpython.com/python-json/)
+
+### API Authentication
+- [API Keys vs Bearer Tokens](https://stackoverflow.com/questions/34013299/web-api-authentication-basic-vs-bearer)
+- [Understanding OAuth2](https://www.oauth.com/oauth2-servers/background/)
+- [HTTP Headers for Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
+
+### APIs Used in This Problem Set
+- [ReqRes API Documentation](https://reqres.in/docs)
+- [TMDB API Documentation](https://developers.themoviedb.org/3/getting-started/introduction)
+- [GitHub REST API Documentation](https://docs.github.com/en/rest)
+- [Spotify Web API Documentation](https://developer.spotify.com/documentation/web-api)
+
+### REST API Concepts
+- [What is a REST API?](https://www.redhat.com/en/topics/api/what-is-a-rest-api)
+- [RESTful API Design Best Practices](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
 
