@@ -1,62 +1,76 @@
 # HTTP and APIs
 
-This repository provides a foundational understanding of the **HyperText Transfer Protocol (HTTP)** and how **Application Programming Interfaces (APIs)** enable communication between different software systems.
-
+This repository introduces HTTP fundamentals and shows how APIs use HTTP for application-to-application communication.
 
 ## 🎯 Lesson Objectives
 
-* Understand the core rules and structure of the **HTTP protocol**.
-* Identify common **HTTP methods** and **response status codes**.
-* Explore how APIs facilitate data exchange between clients and servers.
+* Understand HTTP request/response flow and stateless behavior.
+* Recognize common methods, status codes, and message structure.
+* Use tools like `curl`, Postman, browser dev tools, and Python `requests`.
+* Read API docs to identify endpoints, parameters, and pagination.
+* Explain common authentication approaches (Basic Auth, tokens, cookies, OAuth).
 
+## 🌐 HTTP Fundamentals
 
-## 🌐 The HTTP Protocol
+HTTP follows a request/response model: clients initiate communication and servers listen and respond.
 
-Specified in RFC 1945, HTTP is the standard protocol for transferring data over the web. It relies on a request-response model between a client (like a browser) and a server.
+- One request maps to one response.
+- HTTP is stateless, so applications use cookies or tokens to maintain continuity across requests.
 
+## 📩 Request and Response Anatomy
 
-### Core Rules
+Each HTTP message is built from a start line, headers, and an optional body.
 
-- **Client-Initiated:** The client always starts the communication; the server listens for requests.
-- **One-to-One:** Each exchange consists of exactly one request and one corresponding response.
-- **Stateless:** The server does not remember previous interactions, which is why "cookies" are often used to maintain session state.
-
-
-## 📩 Anatomy of a Request & Response
-
-An HTTP exchange is composed of three main parts: a start line, headers (metadata), and an optional body (the actual data).
-
-
-### Example Exchange
-
-- **Request:** `GET /test HTTP/1.1` followed by headers like `Host: example.com`.
-- **Response:** `HTTP/1.1 200 OK` followed by server info and the content body (e.g., HTML or JSON).
-
+- Requests commonly include path, query string, headers, and body.
+- Responses include a status line plus metadata and optional content payload.
 
 ## 🛠️ Methods and Status Codes
 
-### Common Request Methods
+This lesson emphasizes practical methods and response interpretation.
 
-Methods indicate the desired action to be performed on a resource:
+- Methods: GET, HEAD, POST
+- Status code families: 2xx success, 3xx redirect, 4xx client error, 5xx server error
 
-- **`GET`**: Retrieve data from the server.
-- **`POST`**: Submit new data to the server.
-- **`HEAD`**: Same as GET but only transfers the status line and header section (no body).
+## 🧰 Tooling and Workflow
 
+Students use both command-line and GUI tools to inspect and test HTTP behavior.
 
-### Response Status Codes
+- curl, Postman, and browser dev tools for quick endpoint testing
+- Python `requests` for scripted calls, response parsing, and automation-friendly workflows
 
-Standardized codes that indicate the result of the request:
+## 🔤 Encoding and Payload Handling
 
-- **200 OK**: The request succeeded.
-- **201 Created**: The request succeeded and a new resource was created.
-- **301 Moved Permanently**: The resource has been assigned a new permanent URI.
-- **400 Bad Request**: The server could not understand the request.
-- **403 Forbidden**: The server understood but refuses to authorize the request.
-- **404 Not Found**: The server cannot find the requested resource.
-- **500 Internal Server Error**: The server encountered an unexpected condition.
+Because all transmitted data is bytes, encoding choices affect correctness and interoperability.
 
+- Character encodings define how text maps to binary
+- Base64 provides a text-safe way to transport binary-like data in HTTP contexts
 
-## 🔗 APIs and Connectivity
+## 📚 API Documentation Literacy
 
-APIs use HTTP as a transport layer to allow different applications to "talk" to one another, typically exchanging data in formats like **JSON**.
+Students practice reading docs with implementation in mind.
+
+- Identify required vs optional parameters
+- Determine where each parameter belongs (path, query, or body)
+- Recognize pagination and other multi-response patterns
+
+## 🔐 Authentication Overview
+
+The lesson compares common approaches used in stateless protocols.
+
+- Basic Authentication
+- API keys/tokens
+- Session cookies
+- OAuth
+
+Discussion prompts include token lifetime, issuing authority, revocation strategy, and resource scope.
+
+## 🧪 Hands-On Activities
+
+- [Hands-On #1: Python `requests` Basics](http_exercises.md)
+- [Hands-On #1 Solutions](http_exercises_solution.md)
+- [Hands-On #2: Authentication with Python `requests`](http_exercises.md#hands-on-2-authentication-with-python-requests)
+
+## 🔗 References
+
+- HTTP status code reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
+- Python requests quickstart: https://docs.python-requests.org/en/latest/user/quickstart/#make-a-request

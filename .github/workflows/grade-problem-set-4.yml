@@ -9,9 +9,6 @@ on:
 permissions:
     contents: read
 
-env:
-    FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
     # ---------------------------------------------------------------------------
     # One job per problem — run in parallel, each function gets its own step.
@@ -20,6 +17,7 @@ jobs:
     problem-1:
         name: "Problem 1 — Soldier Roster & Dispatch System"
         runs-on: ubuntu-latest
+        continue-on-error: true
         env:
             SOLUTION_MODE: ${{ github.repository == 'AFC-AI2C/summer-course' && github.event_name == 'workflow_dispatch' && 'true' || '' }}
         steps:
@@ -32,31 +30,26 @@ jobs:
             - run: pip install -r .github/python_tests/requirements.txt
 
             - name: "Soldier class"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestSoldierClass
                   -v --tb=short --no-header --color=yes -s
 
             - name: "process_reports()"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestProcessReports
                   -v --tb=short --no-header --color=yes -s
 
             - name: "show_available()"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestShowAvailable
                   -v --tb=short --no-header --color=yes -s
 
             - name: "dispatch()"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestDispatch
                   -v --tb=short --no-header --color=yes -s
 
             - name: "fitness_report() — Challenge"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestFitnessReport
                   -v --tb=short --no-header --color=yes -s
@@ -64,6 +57,7 @@ jobs:
     problem-2:
         name: "Problem 2 — Recipe Ingredient Checker"
         runs-on: ubuntu-latest
+        continue-on-error: true
         env:
             SOLUTION_MODE: ${{ github.repository == 'AFC-AI2C/summer-course' && github.event_name == 'workflow_dispatch' && 'true' || '' }}
         steps:
@@ -76,31 +70,26 @@ jobs:
             - run: pip install -r .github/python_tests/requirements.txt
 
             - name: "Recipe class"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestRecipeClass
                   -v --tb=short --no-header --color=yes -s
 
             - name: "Pantry class"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestPantryClass
                   -v --tb=short --no-header --color=yes -s
 
             - name: "create_recipes()"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestCreateRecipes
                   -v --tb=short --no-header --color=yes -s
 
             - name: "check_recipes()"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestCheckRecipes
                   -v --tb=short --no-header --color=yes -s
 
             - name: "Pantry.add_ingredients() — Challenge"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestPantryAddIngredients
                   -v --tb=short --no-header --color=yes -s
@@ -108,6 +97,7 @@ jobs:
     problem-3:
         name: "Problem 3 — Song Lyric Word Counter"
         runs-on: ubuntu-latest
+        continue-on-error: true
         env:
             SOLUTION_MODE: ${{ github.repository == 'AFC-AI2C/summer-course' && github.event_name == 'workflow_dispatch' && 'true' || '' }}
         steps:
@@ -120,13 +110,11 @@ jobs:
             - run: pip install -r .github/python_tests/requirements.txt
 
             - name: "LyricAnalyzer class"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestLyricAnalyzerClass
                   -v --tb=short --no-header --color=yes -s
 
             - name: "LyricAnalyzer.filter_stopwords() — Challenge"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestFilterStopwords
                   -v --tb=short --no-header --color=yes -s
@@ -134,6 +122,7 @@ jobs:
     problem-4:
         name: "Problem 4 — Zoo Animal Registry"
         runs-on: ubuntu-latest
+        continue-on-error: true
         env:
             SOLUTION_MODE: ${{ github.repository == 'AFC-AI2C/summer-course' && github.event_name == 'workflow_dispatch' && 'true' || '' }}
         steps:
@@ -146,25 +135,21 @@ jobs:
             - run: pip install -r .github/python_tests/requirements.txt
 
             - name: "Animal class"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestAnimalClass
                   -v --tb=short --no-header --color=yes -s
 
             - name: "build_registry()"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestBuildRegistry
                   -v --tb=short --no-header --color=yes -s
 
             - name: "analyze_registry()"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestAnalyzeRegistry
                   -v --tb=short --no-header --color=yes -s
 
             - name: "group_by_species() — Challenge"
-              continue-on-error: true
               run: >
                   pytest .github/python_tests/test_problem_set_4.py::TestGroupBySpecies
                   -v --tb=short --no-header --color=yes -s
