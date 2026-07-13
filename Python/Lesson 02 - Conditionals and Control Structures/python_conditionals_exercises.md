@@ -1,4 +1,4 @@
-# Hands-On: Python Conditional Statements
+<!-- # Hands-On: Python Conditional Statements
 
 These exercises focus on using `if`, `elif`, and `else` statements to control program flow. You'll work with comparison operators, logical operators, and data types from Lesson 1 to make decisions in your code.  Write each exercise as a separate python script.
 
@@ -67,9 +67,9 @@ b = 20
 
 ✅ *Check*: Should print the correct letter grade.
 
----
+<!-- --- -->
 
-### Exercise 6: String Length Check
+<!-- ### Exercise 6: String Length Check
 
 **Goal**: Write a Python Script that asks the user for an input string.  Then check if a string has more than 10 characters.  Print "Long string" if it is longer than 10 characters, print "Short string" if it is shorter.
 
@@ -77,7 +77,7 @@ b = 20
 
 ✅ *Check*: Should print "Long string" if length is greater than 10, otherwise "Short string".
 
----
+--- --> -->
 
 ### Exercise 7: Logical AND Operator
 

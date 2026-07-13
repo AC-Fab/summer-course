@@ -154,3 +154,18 @@
 #     count += 1
 # print(f"Congratulations, you guessed correct. The secret number was {secret_number}")
 # print(f"It took you {count} guesses")
+
+# String length check
+# user_qoute = input("What is your favorite qoute? ")
+
+# if len(user_qoute) >= 10:
+#     print("Long string")
+# else:
+#     print("Short string")
+
+user_num = int(input("Please pick a number "))
+
+if user_num >= 10 and user_num <= 20:
+    print(f"{user_num} is in range")
+else:
+    print(f"{user_num} is out of range")
