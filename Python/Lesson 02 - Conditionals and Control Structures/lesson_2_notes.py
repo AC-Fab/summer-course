@@ -163,9 +163,141 @@
 # else:
 #     print("Short string")
 
-user_num = int(input("Please pick a number "))
+# Exercise 7: Logical AND Operator
 
-if user_num >= 10 and user_num <= 20:
-    print(f"{user_num} is in range")
-else:
-    print(f"{user_num} is out of range")
+# user_num = int(input("Please pick a number "))
+
+# if user_num >= 10 and user_num <= 20:
+#     print(f"{user_num} is in range")
+# else:
+#     print(f"{user_num} is out of range")
+
+# Exercise 8: Logical OR Operator
+# import string
+
+# for letter in string.ascii_lowercase:
+#     print(letter)
+
+# letter = input("Pick a letter! ")
+
+# if (
+#     letter == "a"
+#     or letter == "e"
+#     or letter == "i"
+#     or letter == "o"
+#     or letter == "u"
+#     or letter == "A"
+#     or letter == "E"
+#     or letter == "I"
+#     or letter == "O"
+#     or letter == "U"
+# ):
+#     print("Vowel")
+# else:
+#     print("Consonant")
+
+# Exercise 9: Leap year Checker
+
+# user_year = int(input("PLease pick a year. "))
+
+# if user_year % 4 == 0 and (user_year % 100 != 0 or user_year % 400 == 0):
+
+#     print("You picked a leap year, HAZAAAA!")
+# else:
+#     print("This year can't jump!!!!!")
+
+# Exercise 10: Nested Conditionals - BMI Calculator
+
+# user_wt = float(input("How much do you weigh(KG)? "))
+# user_ht = float(input("How tall are you(meters)? "))
+
+# bmi = user_wt / (user_ht**2)
+
+# if bmi >= 30:
+#     print("FATTY")
+# elif bmi >= 25:
+#     print("fatty")
+# elif bmi >= 18.5:
+#     print("Not fatty")
+# else:
+#     print("You need to eat more!")
+
+# HANDS-On #2
+# Exercise 11: create and print a list
+
+# colors = ["red", "blue", "green"]
+# for color in colors:
+#     print(color)
+
+# Exercise 12: list length
+
+# numbers_list = list(range(5, 26, 5))
+# print(f"This lsit has {len(numbers_list)} items!")
+
+# Exercise 13: Append to a list
+
+# my_list = []
+
+# my_list.append(1)
+# my_list.append(2)
+# my_list.append(3)
+# my_list.append("four")
+# my_list.append(5.0)
+
+# print(my_list)
+
+# Exercise 14: Loop through range
+
+# numbers = range(1, 11)
+
+# for number in numbers:
+#     print(number)
+
+# Exercise 15: Sum Numbers in a list
+
+# numbers = [4, 7, 2, 9, 12]
+
+# total = 0
+
+# for number in numbers:
+#     total += number
+
+# print(total)
+
+# Exercise 16: List membership
+
+# available_fruits = ["apple", "banana", "orange", "mango"]
+
+# fruit = input("What fruit do you want? ")
+
+# if fruit in available_fruits:
+#     print("!n stock!")
+# else:
+#     print("Not in stock.")
+
+# Exercise 17: Count Even Numbers
+# Goal: Count how many even numbers are in a list using a for loop.
+
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# ✅ Check: Should print "There are 5 even numbers".
+
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# count = 0
+
+# for number in numbers:
+#     if number % 2 == 0:
+#         count += 1
+# print(f"There are {count} even numbers")
+
+# Exercise 18: While Loop Countdown
+# Goal: Use a while loop to count down from 10 to 1.
+
+# count = 10
+# ✅ Check: Should print 10, 9, 8, ..., 2, 1.
+
+count = 10
+
+while count > 0:
+    print(count)
+    count -= 1
