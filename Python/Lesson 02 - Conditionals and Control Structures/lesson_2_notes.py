@@ -296,8 +296,9 @@
 # count = 10
 # ✅ Check: Should print 10, 9, 8, ..., 2, 1.
 
-count = 10
+# count = 10
 
-while count > 0:
-    print(count)
-    count -= 1
+# while count > 0:
+#     print(count)
+#     count -= 1
+# How do I make this one line?
