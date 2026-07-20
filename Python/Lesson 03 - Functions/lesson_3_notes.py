@@ -143,17 +143,68 @@
 # print(f"The tip amount should be {tip_amount} totaling {total}!")
 
 
-def has_more_characters(text1: str, text2: str) -> str:
-    result1 = len(text1)
-    result2 = len(text2)
+# def has_more_characters(text1: str, text2: str) -> str:
+#     result1 = len(text1)
+#     result2 = len(text2)
 
-    if result1 > result2:
-        return f"{text1}, has more Characters!"
-    else:
-        return f"{text2}, has more Characters!"
+#     if result1 > result2:
+#         return f"{text1}, has more Characters!"
+#     else:
+#         return f"{text2}, has more Characters!"
 
 
-user_text1 = input("Please choose a word!")
-user_text2 = input("Please choose another word!")
+# user_text1 = input("Please choose a word!")
+# user_text2 = input("Please choose another word!")
 
-print(has_more_characters(user_text1, user_text2))
+# print(has_more_characters(user_text1, user_text2))
+
+# count = 0
+# while count < 5:
+#     print(count)
+#     count += 1
+
+# temp = int(input("What is the temperature? "))
+
+# if temp >= 65:
+#     print("Enjoy the weather!")
+# elif temp >= 40:
+#     print("Bring a jacket")
+# else:
+#     print("Wear a coat")
+
+
+# num1 = int(input("Pick a starting number. "))
+# num2 = int(input("Pick an ending number. "))
+
+
+# def fizzbuzz(beginning, end):
+#     num_list = list(range(beginning, end))
+#     return num_list
+
+
+# fizzbuzz(num1, num2)
+
+# for number in num_list:
+#     if number % 3 == 0 and number % 5 == 0:
+#         print("Fizz")
+#     elif number % 5 == 0:
+#         print("Buzz")
+#     elif number % 3 == 0:
+#         print("FizzBuzz")
+#     else:
+#         print(number)
+
+start = int(input("Enter the Start Value: "))
+stop = int(input("Enter the stop value: "))
+
+
+def fizzbuzz(beginning: int, end: int) -> None:
+    for number in range(beginning, end + 1):
+        if number % 3 == 0 and number % 5 == 0:
+            print("FizzBuzz")
+        elif number % 3 == 0:
+            print("Fizz")
+        elif number % 5 == 0:
+            print("Buzz")
+        else:
+            print(number)
