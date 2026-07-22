@@ -194,17 +194,17 @@
 #     else:
 #         print(number)
 
-start = int(input("Enter the Start Value: "))
-stop = int(input("Enter the stop value: "))
+# start = int(input("Enter the Start Value: "))
+# stop = int(input("Enter the stop value: "))
 
 
-def fizzbuzz(beginning: int, end: int) -> None:
-    for number in range(beginning, end + 1):
-        if number % 3 == 0 and number % 5 == 0:
-            print("FizzBuzz")
-        elif number % 3 == 0:
-            print("Fizz")
-        elif number % 5 == 0:
-            print("Buzz")
-        else:
-            print(number)
+# def fizzbuzz(beginning: int, end: int) -> None:
+#     for number in range(beginning, end + 1):
+#         if number % 3 == 0 and number % 5 == 0:
+#             print("FizzBuzz")
+#         elif number % 3 == 0:
+#             print("Fizz")
+#         elif number % 5 == 0:
+#             print("Buzz")
+#         else:
+#             print(number)
