@@ -66,6 +66,9 @@
 # else:
 #     print("Shopping list is empty")
 
-# Error 1
-student = {"name": "Alice", "age": 20, "major": "Computer Science", "grade": "A"}
-print(student["grade"])
+# # Error 1
+# student = {"name": "Alice", "age": 20, "major": "Computer Science", "grade": "A"}
+# print(student["grade"])
+# # Safer approach ####Why is this safer?####
+# grade = student.get("grade", "No grade available")
+# print(grade)
