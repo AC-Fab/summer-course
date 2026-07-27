@@ -39,7 +39,7 @@ Do this part in GitHub
 This step sets up your local repository to "track" the remote repository under the name `origin`.
 
 ```bash
-git remote add origin {your_url}
+git remote add origin <your_url>
 ```
 
 ✅ *Check*: Run `git remote -v` to verify the remote is added.
