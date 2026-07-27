@@ -51,7 +51,7 @@ git remote add origin {your_url}
 **Goal**: Push local commits to the remote repository.
 
 ```bash
-git push -u origin main
+git push -u origin <branch name>
 ```
 
 ✅ *Check*: Visit the GitHub repo and confirm your code appears.
