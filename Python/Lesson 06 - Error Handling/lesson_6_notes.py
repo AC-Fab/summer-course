@@ -22,8 +22,3 @@
 #     average = sum / count
 
 #     print(f"Max is : {max} Min is: {min} Average is {average}")
-
-
-classful = [1, 2, 3, 4, 5]
-
-print(classful[6])
