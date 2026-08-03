@@ -15,6 +15,10 @@ def hello_world():
         result += "\n- Server received: " + json.dumps(
             {key: val for key, val in request.args.items()}
         )
+    if request.headers:
+        result += "\n- Headers received: " + json.dumps(
+            {key: val for key, val in request.headers.items()}
+        )
     return result
 
 
