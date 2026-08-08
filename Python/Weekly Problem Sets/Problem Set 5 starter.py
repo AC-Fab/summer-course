@@ -22,3 +22,15 @@ def palindrome_checker(text: str) -> bool:
         return False
 
     return palindrome_checker(text[1:-1])
+
+
+# List length recursion
+# I need to create my base case I tihnk similar to the palindrome checker
+# if the list is 1 or fewer should come out of the recursion
+# Then return the number of times we recursed?
+
+
+def length(items: list) -> int:
+    if items == []:
+        return 0
+    return 1 + length(items[1:])
