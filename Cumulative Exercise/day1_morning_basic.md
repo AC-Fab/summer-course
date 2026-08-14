@@ -1,0 +1,100 @@
+# Day 1 - Morning
+In this session you will accomplish the following features:
+1. Build a small web app in python
+2. Add test cases to your web app
+3. Format and lint your code
+4. Add pre-commit checks locally and push your code
+
+Throughout this exercise, pay special attention to where you are creating files.
+Creating a file in the wrong directory may cause the tools that you are using 
+to miss those files.
+
+## Topics Covered
+- FastAPI
+- Unit tests
+- Formatting and Linting
+- Pre-commit checks
+- Git repositories, pushing
+
+## Intermediate exercises
+If you complete these exercises early, proceed to the intermediate level file.
+
+# Exercises
+
+## Project Setup
+In this phase, you will setup your environment so that you can complete the follow-on tasks:
+
+### Steps
+1. Create a repository in GitHub
+2. Track the remote repository locally, or clone the remote repository locally
+3. Create a virtual environment in your repository
+4. Create a `requirements.txt` file to specify the `fastapi` and `uvicorn` dependencies
+5. Activate the virtual environment and install the dependencies in the environment
+6. Add any relevant folders or files to the `.gitignore` file
+7. Push the current setup to your repository
+
+### Reference material
+- [Quick FastAPI start](https://www.tutorialspoint.com/fastapi/fastapi_hello_world.htm)
+- [venvs / requirements](https://docs.python.org/3/tutorial/venv.html)
+- [git init vs clone](https://github.com/git-guides/git-init)
+
+## Building a small web app
+Now it's time to build a small web app.  We'll start with testing it locally and worry about other 
+details later.
+
+### Steps
+1. Create a new folder called `web_app` to store the web app files.
+2. Create a new file called `main.py` for your fastapi code.
+3. Using fastapi within `main.py`, create a simple web page at the root URL `/` that responds to 
+`GET` Requests
+4. Start your web server and navigate to the root to validate the basic infrastructure works
+5. Add another another `POST` endpoint that takes `city`, and `state` as inputs and returns the `lat`/`long`
+    - You can "consume" another API to do this conversion for you
+    - Make sure to add some validation to the inputs (what if the user provides no state? etc)
+    - Make sure to add some validation or retries when you call the other API (what if they never 
+respond? etc)
+
+### Reference material
+- [Quick FastAPI start](https://www.tutorialspoint.com/fastapi/fastapi_hello_world.htm)
+- [Free name to lat/long API](https://geocode.maps.co/docs/endpoints/)
+
+## Best Practices
+You may have to add some new tools for this section.  Be sure to add them to your 
+`requirements.txt` file.
+### Format and lint
+1. Format and lint your code using black and pylint (you'll want to ignore your venv folder)
+
+### Unit tests
+1. Add unit tests to your code (typically this would be in the `web_app/tests/` folder)
+2. Determine the code coverage of your unit tests
+3. How should you "test" your code with the other API?  How do you make the tests
+reproducible without relying on the other service? (no need to implement but think about)
+4. Validate your changes and push your code
+
+### Reference Material
+- [Sample Black config file](https://gist.github.com/Hrissimir/4c07729d3c5d99fd89816c90f7865b0b)
+- [Sample pylint config file](./sample.pylintrc)
+- [Pytest unit testing](https://docs.pytest.org/en/stable/how-to/assert.html)
+- [Sample pytest config file](https://github.com/Pytest-with-Eric/pytest-config-file-example/blob/main/pytest.ini)
+
+## Pre-commit Checks
+You may have to add some new tools for this section.  Be sure to add them to your 
+`requirements.txt` file.
+
+### Steps
+1. Create a new branch
+2. Write your pre-commit config file (`.pre-commit-config.yaml`)
+    - black
+    - pylint
+    - pytest
+3. Install the pre-commit hooks to your repo
+4. Run the hooks against all files in the repo (by default it only runs against
+changed files)
+5. Commit and push your changes (your pre-commit tools should run here)
+
+### Reference Material
+- [Pre-commit sample config](https://github.com/PramodKumarYadav/pre-commit-hook-for-python/blob/main/.pre-commit-config.yaml)
+
+
+# Congrats
+If you made it this far, you've completed the basic exercises for the morning.  Enjoy the well-earned taste of success!  If you have time, consider doing the intermediate exercises.
