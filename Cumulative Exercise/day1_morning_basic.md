@@ -61,8 +61,9 @@ respond? etc)
 ## Best Practices
 You may have to add some new tools for this section.  Be sure to add them to your 
 `requirements.txt` file.
-### Format and lint
+### Format, lint, and type checking
 1. Format and lint your code using black and pylint (you'll want to ignore your venv folder)
+2. Run mypy on your code (you'll want to ignore your venv folder)
 
 ### Unit tests
 1. Add unit tests to your code (typically this would be in the `web_app/tests/` folder)
@@ -87,6 +88,7 @@ You may have to add some new tools for this section.  Be sure to add them to you
     - black
     - pylint
     - pytest
+    - mypy
 3. Install the pre-commit hooks to your repo
 4. Run the hooks against all files in the repo (by default it only runs against
 changed files)
