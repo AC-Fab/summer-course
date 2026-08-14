@@ -77,6 +77,7 @@ reproducible without relying on the other service? (no need to implement but thi
 - [Sample pylint config file](./sample.pylintrc)
 - [Pytest unit testing](https://docs.pytest.org/en/stable/how-to/assert.html)
 - [Sample pytest config file](https://github.com/Pytest-with-Eric/pytest-config-file-example/blob/main/pytest.ini)
+- [Sample mypy config file](https://mypy.readthedocs.io/en/stable/config_file.html#example-mypy-ini)
 
 ## Pre-commit Checks
 You may have to add some new tools for this section.  Be sure to add them to your 
