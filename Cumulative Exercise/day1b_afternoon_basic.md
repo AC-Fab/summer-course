@@ -1,5 +1,5 @@
 # 1. Day 1 - Afternoon
-In this session you will accomplish the following features:
+In this session you will accomplish the following steps:
 1. !Create a GH Actions pipeline in a new branch
 2. !Validate your pipeline with a pull request
 3. Add a new feature -- branch, test cases, code, push, merge
