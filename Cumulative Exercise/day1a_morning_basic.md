@@ -1,8 +1,8 @@
 # 1. Day 1 - Morning
-In this session you will accomplish the following features:
+In this session you will accomplish the following steps:
 1. !Build a small web app in python
 2. !Add test cases to your web app
-3. Format and lint your code
+3. !Format, lint, and type check your code
 4. Add pre-commit checks locally and push your code
 
 Throughout this exercise, pay special attention to where you are creating files.
