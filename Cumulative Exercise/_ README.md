@@ -56,3 +56,5 @@ This is a good exercise to assess your comfort and experience levels across a va
 As you go through the process, think carefully about your weak spots and take notes to study those 
 weak spots later.  Thoroughly understanding these concepts will leave you with a good foundation for
 further learning and application development.
+
+A solution for the cumulative exercise is [on GitHub](https://github.com/AFC-AI2C/summer-cumulative-exercise).
