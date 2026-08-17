@@ -8,19 +8,13 @@ ignored-modules=migrations,settings
 disable=
     # Missing docstrings
     missing-docstring,
-    # Too many arguments/locals
-    too-many-arguments,
-    too-many-locals,
     # Line length (if you handle this separately with black/flake8)
     line-too-long,
-    # Import position formatting
-    wrong-import-position,
-    # Unused imports (common in __init__.py)
-    unused-import,
+    import-error
 
 [FORMAT]
 # Maximum line length (optional override)
-max-line-length=100
+max-line-length=120
 
 [DESIGN]
 # Allow more attributes/classes/functions if needed

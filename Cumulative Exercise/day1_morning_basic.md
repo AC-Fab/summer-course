@@ -19,6 +19,28 @@ to miss those files.
 ## Intermediate exercises
 If you complete these exercises early, proceed to the intermediate level file.
 
+## Table of Contents
+- [Day 1 - Morning](#day-1---morning)
+  - [Topics Covered](#topics-covered)
+  - [Intermediate exercises](#intermediate-exercises)
+  - [Table of Contents](#table-of-contents)
+- [Exercises](#exercises)
+  - [Project Setup](#project-setup)
+    - [Steps](#steps)
+    - [Reference material](#reference-material)
+  - [Building a small web app](#building-a-small-web-app)
+    - [Steps](#steps-1)
+    - [Reference material](#reference-material-1)
+  - [Best Practices](#best-practices)
+    - [Format, lint, and type checking](#format-lint-and-type-checking)
+    - [Unit tests](#unit-tests)
+    - [Reference Material](#reference-material-2)
+  - [Pre-commit Checks](#pre-commit-checks)
+    - [Steps](#steps-2)
+    - [Reference Material](#reference-material-3)
+- [Congrats](#congrats)
+
+
 # Exercises
 
 ## Project Setup
@@ -51,12 +73,15 @@ details later.
 5. Add another another `POST` endpoint that takes `city`, and `state` as inputs and returns the `lat`/`long`
     - You can "consume" another API to do this conversion for you
     - Make sure to add some validation to the inputs (what if the user provides no state? etc)
+    - It's generally bad practice to hard code API keys in your source control, but it's fine for this practice.  Alternatively, use the `dotenv` package to load a `.env` file.
     - Make sure to add some validation or retries when you call the other API (what if they never 
 respond? etc)
+    - Hint: it's easier to use path parameters here
 
 ### Reference material
 - [Quick FastAPI start](https://www.tutorialspoint.com/fastapi/fastapi_hello_world.htm)
 - [Free name to lat/long API](https://geocode.maps.co/docs/endpoints/)
+- [Later reading: async keyword](https://realpython.com/async-io-python/)
 
 ## Best Practices
 You may have to add some new tools for this section.  Be sure to add them to your 
@@ -73,11 +98,11 @@ reproducible without relying on the other service? (no need to implement but thi
 4. Validate your changes and push your code
 
 ### Reference Material
-- [Sample Black config file](https://gist.github.com/Hrissimir/4c07729d3c5d99fd89816c90f7865b0b)
-- [Sample pylint config file](./sample.pylintrc)
+- [Sample Black config file](./samples/.black)
+- [Sample pylint config file](./samples/.pylintrc)
+- [Sample pytest config file](./samples/pytest.ini)
+- [Sample mypy config file](./samples/mypy.ini)
 - [Pytest unit testing](https://docs.pytest.org/en/stable/how-to/assert.html)
-- [Sample pytest config file](https://github.com/Pytest-with-Eric/pytest-config-file-example/blob/main/pytest.ini)
-- [Sample mypy config file](https://mypy.readthedocs.io/en/stable/config_file.html#example-mypy-ini)
 
 ## Pre-commit Checks
 You may have to add some new tools for this section.  Be sure to add them to your 
@@ -88,12 +113,14 @@ You may have to add some new tools for this section.  Be sure to add them to you
 2. Write your pre-commit config file (`.pre-commit-config.yaml`)
     - black
     - pylint
-    - pytest
     - mypy
+    - pytest
 3. Install the pre-commit hooks to your repo
 4. Run the hooks against all files in the repo (by default it only runs against
 changed files)
 5. Commit and push your changes (your pre-commit tools should run here)
+    - Some tools fix the files (mostly formatters) so you can simply re-run
+    - Other tools you need to go back and fix the issues before re-running
 
 ### Reference Material
 - [Pre-commit sample config](https://github.com/PramodKumarYadav/pre-commit-hook-for-python/blob/main/.pre-commit-config.yaml)
