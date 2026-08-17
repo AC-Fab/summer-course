@@ -1,7 +1,7 @@
 # 1. Day 1 - Morning
 In this session you will accomplish the following features:
-1. Build a small web app in python
-2. Add test cases to your web app
+1. !Build a small web app in python
+2. !Add test cases to your web app
 3. Format and lint your code
 4. Add pre-commit checks locally and push your code
 
@@ -31,7 +31,7 @@ If you complete these exercises early, proceed to the intermediate level file.
   - [2.2. !Building a small web app](#22-building-a-small-web-app)
     - [2.2.1. Steps](#221-steps)
     - [2.2.2. Reference material](#222-reference-material)
-  - [2.3. Best Practices](#23-best-practices)
+  - [2.3. !Best Practices](#23-best-practices)
     - [2.3.1. Format, lint, and type checking](#231-format-lint-and-type-checking)
     - [2.3.2. Unit tests](#232-unit-tests)
     - [2.3.3. Reference Material](#233-reference-material)
@@ -83,7 +83,7 @@ respond? etc)
 - [Free name to lat/long API](https://geocode.maps.co/docs/endpoints/)
 - [Later reading: async keyword](https://realpython.com/async-io-python/)
 
-## 2.3. Best Practices
+## 2.3. !Best Practices
 You may have to add some new tools for this section.  Be sure to add them to your 
 `requirements.txt` file.
 ### 2.3.1. Format, lint, and type checking
