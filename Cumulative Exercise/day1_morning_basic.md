@@ -25,10 +25,10 @@ If you complete these exercises early, proceed to the intermediate level file.
   - [1.2. Intermediate exercises](#12-intermediate-exercises)
   - [1.3. Table of Contents](#13-table-of-contents)
 - [2. Exercises](#2-exercises)
-  - [2.1. Project Setup](#21-project-setup)
+  - [2.1. !Project Setup](#21-project-setup)
     - [2.1.1. Steps](#211-steps)
     - [2.1.2. Reference material](#212-reference-material)
-  - [2.2. Building a small web app](#22-building-a-small-web-app)
+  - [2.2. !Building a small web app](#22-building-a-small-web-app)
     - [2.2.1. Steps](#221-steps)
     - [2.2.2. Reference material](#222-reference-material)
   - [2.3. Best Practices](#23-best-practices)
@@ -43,7 +43,7 @@ If you complete these exercises early, proceed to the intermediate level file.
 
 # 2. Exercises
 
-## 2.1. Project Setup
+## 2.1. !Project Setup
 In this phase, you will setup your environment so that you can complete the follow-on tasks:
 
 ### 2.1.1. Steps
@@ -60,7 +60,7 @@ In this phase, you will setup your environment so that you can complete the foll
 - [venvs / requirements](https://docs.python.org/3/tutorial/venv.html)
 - [git init vs clone](https://github.com/git-guides/git-init)
 
-## 2.2. Building a small web app
+## 2.2. !Building a small web app
 Now it's time to build a small web app.  We'll start with testing it locally and worry about other 
 details later.
 

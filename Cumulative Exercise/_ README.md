@@ -9,21 +9,21 @@ recognizing that certain best practices have an up-front cost but pay dividends 
 An overview of the full process is below.  Over the next two days, you will implement each
 step of the process.  The instruction file will give you hints, but we expect that you utilize
 prior course material, online material, and your brain to solve problems.  Your instructor
-can assist you as well if you run into a road block.
+can assist you as well if you run into a road block.  Lines that are marked with a `!` are important!  You will need to complete those to do later steps in the process.
 
 ### Day 1 - Morning 
-1. Build a small web app in python
-2. Add test cases to your web app
+1. !Build a small web app in python
+2. !Add test cases to your web app
 3. Format and lint your code
 4. Add pre-commit checks locally and push your code
 
 ### Day 1 - Afternoon
-5. Create a GH Actions pipeline in a new branch
-6. Validate your pipeline with a pull request
+5. !Create a GH Actions pipeline in a new branch
+6. !Validate your pipeline with a pull request
 7. Add a new feature -- branch, test cases, code, push, merge
 
 ### Day 2 - Morning
-8. Build a docker image in a new branch
+8. !Build a docker image in a new branch
 9. Update your pipeline to build & push the image
 10.  Merge your changes in
 
