@@ -39,8 +39,6 @@ If you complete these exercises early, proceed to the intermediate level file.
    2. Checks formatting, linting, type checks, and unit tests for your web app.
    - Hint:  It's easiest to do this all in one job
    - Hint:  The easiest way to start with steps is to use the `run` instruction with the same commands you type in your terminal
-   - As a bonus exercise, you can add caching
-   - As a bonus bonus exercise, you can spread the work across multiple jobs.
 3. Test your workflow by manually dispatching the workflow from the current branch
 
 ### 2.1.2. Reference Material
